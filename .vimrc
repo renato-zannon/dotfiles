@@ -156,8 +156,13 @@ autocmd BufWrite * :%s/ \+$//e
 set hidden
 
 " Configuração do syntastic
+" =========================
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_signs=1
+
+" Folds automáticos podem atrapalhar...
+" =====================================
+set foldmethod=manual
