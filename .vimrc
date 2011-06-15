@@ -21,9 +21,11 @@ set history=50
 " have further <Tab>s cycle through the possibilities:
 set wildmode=list:longest,full
 
-" It makes managing Vim plugins a lot simpler
-" http://www.adamlowe.me/2009/12/vim-destroys-all-other-rails-editors.html
-call pathogen#runtime_append_all_bundles()
+" Pathogen, to help plugin install
+call pathogen#infect()
+
+" Updating helptags
+call pathogen#helptags()
 
 " display the current mode and partially-typed commands in the status line:
 set showmode
