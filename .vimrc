@@ -168,3 +168,6 @@ let g:syntastic_enable_signs=1
 " Folds automáticos podem atrapalhar...
 " =====================================
 set foldmethod=manual
+
+" Mudando diretório de snippets
+let g:snippets_dir="~/.vim/snippets"
