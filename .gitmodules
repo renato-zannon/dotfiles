@@ -25,6 +25,3 @@
 [submodule "bundle/vim-ruby-debugger"]
 	path = bundle/vim-ruby-debugger
 	url = http://github.com/astashov/vim-ruby-debugger.git
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
-	url = http://github.com/msanders/snipmate.vim.git
