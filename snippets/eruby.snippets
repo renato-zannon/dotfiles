@@ -1,0 +1,42 @@
+# 'Listing' snippets
+snippet lb
+	<% listing do |lb| %>
+		${1}
+	<% end %>
+	
+
+snippet lbh
+	<% lb.head do %>
+		<% lb.row do %>
+			<%= lb.headers(${1:Class}, ${2:fields}) %>
+		<% end %>
+	<% end %>
+	${3}	
+
+snippet lbb
+	<% lb.body do %>
+		<% lb.row do %>
+			<% ${1:@results}.each do |${2:result}| %>
+				<% lb.field_cells(${3:*results_field_cells}) do |f, opts| %>
+					<%= render_fields($2, [f, opts], :mode => :listing) %>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% end %>
+	${4}
+
+snippet lbf
+	<% lb.foot do %>
+		<% lb.row do %>
+			<th>${1}</th>
+		<% end %>
+	<% end %>
+	
+
+snippet pdf
+	<%= report_format_buttons %>
+	
+	<% if report_mode == :pdf %>
+	  <%= pdf_report %>
+	<% else %>
+	${1}	

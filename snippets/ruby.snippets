@@ -418,3 +418,14 @@ snippet tas
 	task :${2:task_name => [:dependent, :tasks]} do
 		${3}
 	end
+
+
+# 'Listing' snippets
+snippet lb
+	<% listing do |lb| %>
+	  <% lb.head do %>
+	    <% lb.row do %>
+	      <%= lb.headers(${1:Report's class}, ${2:fields}) %>
+	    <% end %>
+	  <% end %>
+	<% end %>
