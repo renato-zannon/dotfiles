@@ -1,30 +1,40 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = http://github.com/scrooloose/syntastic.git
+        ignore = untracked
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = http://github.com/tpope/vim-rails.git
+        ignore = untracked
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive.git
+        ignore = untracked
 [submodule "bundle/Conque-Shell"]
 	path = bundle/Conque-Shell
 	url = http://github.com/vim-scripts/Conque-Shell.git
+        ignore = untracked
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = http://github.com/tpope/vim-surround.git
+        ignore = untracked
 [submodule "bundle/vim-cucumber"]
 	path = bundle/vim-cucumber
 	url = http://github.com/tpope/vim-cucumber.git
+        ignore = untracked
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = http://github.com/tpope/vim-endwise.git
+        ignore = untracked
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = http://github.com/vim-ruby/vim-ruby.git
+        ignore = untracked
 [submodule "bundle/vim-ruby-debugger"]
 	path = bundle/vim-ruby-debugger
 	url = http://github.com/astashov/vim-ruby-debugger.git
+        ignore = untracked
 [submodule "bundle/snipmate.vim"]
 	path = bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
+        ignore = untracked
