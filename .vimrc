@@ -57,7 +57,6 @@ nnoremap <F7> :tabedit<Space>
 nmap <tab> :tabnext<CR>
 nmap <S-tab> :tabprevious<CR>
 
-nmap <C-b> :!git blame <C-R>% <CR>
 " Mudança de buffer
 " -----------------
 nnoremap <C-h> :bp<CR>
@@ -69,6 +68,11 @@ inoremap <C-h> <C-O>:bp<CR>
 inoremap <A-Left> <C-O>:bp<CR>
 inoremap <C-l> <C-O>:bn<CR>
 inoremap <A-Right> <C-O>:bn<CR>
+
+" Quebra de linha no modo normal
+nnoremap <C-I> i_<ESC>r
+nnoremap <Return> i<Return><ESC>
+nnoremap <NL> $a<Return><ESC>
 
 " Tipos de arquivos específicos
 " =============================
