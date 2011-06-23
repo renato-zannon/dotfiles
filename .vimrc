@@ -74,8 +74,8 @@ nnoremap <C-I> i_<ESC>r
 nnoremap <Return> i<Return><ESC>
 nnoremap <NL> $a<Return><ESC>
 
-" Tipos de arquivos específicos
-" =============================
+" Configurações de tipo de arquivo e identação
+" ============================================
 
 " detecte os tipos de arquivo
 filetype plugin indent on
@@ -128,6 +128,9 @@ augroup c
   autocmd FileType c set fo+=ro
 augroup END
 
+augroup haskell
+  autocmd FileType haskell set sw=4 nosmartindent
+augroup END
 " Procura e substituição
 " ======================
 
@@ -166,3 +169,6 @@ set foldmethod=manual
 
 " Mudando diretório de snippets
 let g:snippets_dir="~/.vim/snippets"
+
+set smartindent
+set shiftwidth=2
