@@ -87,15 +87,6 @@ augroup general
   autocmd BufNewFile,BufRead *.zcml set ft=xml
 augroup END
 
-augroup python
-  autocmd FileType python filetype plugin indent on
-  autocmd BufNewFile,BufRead *.cpy,*.vpy set filetype=python
-  autocmd FileType python set et ts=4 sw=4 sts=4 tw=78
-  autocmd BufWritePre *.py,*.cpy,*.vpy normal m`:%s/\s\*$//e ``
-  " pylint
-  " autocmd FileType python compiler pylint
-augroup END
-
 augroup rest
   " formatação de commits do git segue mesmo padrão do rest
   autocmd FileType rst,gitcommit set ai fo+=tqn tw=78 et sw=4 sts=4
