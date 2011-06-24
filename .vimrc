@@ -168,7 +168,15 @@ let g:syntastic_enable_signs=1
 set foldmethod=manual
 
 " Mudando diretório de snippets
+" =============================
 let g:snippets_dir="~/.vim/snippets"
 
+" Identação padrão
+" ================
 set smartindent
 set shiftwidth=2
+
+" Deixar whitespace 'sobrando' vermelho
+" =====================================
+autocmd Syntax * syn match whitespace /\s\+$/ containedin=ALL
+highlight whitespace ctermbg=red guibg=red
