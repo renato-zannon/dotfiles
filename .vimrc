@@ -47,7 +47,7 @@ set t_Co=256
 syntax on
 
 let transparent_background=1
-colorscheme railscasts
+colorscheme renato
 
 " Movimentação/navegação
 " ======================
