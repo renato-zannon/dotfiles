@@ -183,3 +183,8 @@ set shiftwidth=2
 " =====================================
 autocmd Syntax * syn match whitespace /\s\+$/ containedin=ALL
 highlight whitespace ctermbg=red guibg=red
+
+" Configuração easytags
+" =====================
+let g:easytags_dynamic_files = 1
+set tags=doc/tags,./tags,~/.vim/doc/tags

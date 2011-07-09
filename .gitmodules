@@ -44,3 +44,6 @@
 [submodule "bundle/gem.vim"]
 	path = bundle/gem.vim
 	url = https://github.com/GutenYe/gem.vim.git
+[submodule "bundle/vim-easytags"]
+	path = bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
