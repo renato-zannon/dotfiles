@@ -15,8 +15,8 @@ snippet lbh
 
 snippet lbb
 	<% lb.body do %>
-		<% lb.row do %>
-			<% ${1:@results}.each do |${2:result}| %>
+		<% ${1:@results}.each do |${2:result}| %>
+			<% lb.row do %>
 				<% lb.field_cells(${3:*results_field_cells}) do |f, opts| %>
 					<%= render_fields($2, [f, opts], :mode => :listing) %>
 				<% end %>
@@ -40,3 +40,19 @@ snippet pdf
 	  <%= pdf_report %>
 	<% else %>
 	${1}	
+
+snippet form
+	<% form_for(@${1},
+	            :url => ${2},
+	            :html => {:class => 'form-grid', :method => 'get'}
+	           ) do |f| %>
+	  <fieldset>
+	    <legend><%= legend(@$1.class) %></legend>
+	    <%= f.error_messages %>
+	    <%= render_fields(f,
+	          [${3}] %>
+	    <div class="formActions">
+	      <%= submit_button :action => :${4} %>
+	    </div>
+	  </fieldset>
+	<% end %>
