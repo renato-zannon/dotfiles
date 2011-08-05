@@ -70,7 +70,6 @@ inoremap <C-l> <C-O>:bn<CR>
 inoremap <A-Right> <C-O>:bn<CR>
 
 " Quebra de linha no modo normal
-nnoremap <C-I> i_<ESC>r
 nnoremap <Return> i<Return><ESC>
 nnoremap <NL> $a<Return><ESC>
 
@@ -184,7 +183,24 @@ set shiftwidth=2
 autocmd Syntax * syn match whitespace /\s\+$/ containedin=ALL
 highlight whitespace ctermbg=red guibg=red
 
+" Marcar 'false' quando colocado como symbol
+" ==========================================
+autocmd Syntax * syn match bad_false /:false/ containedin=ALL
+highlight bad_false ctermbg=red guibg=red
+
 " Configuração easytags
 " =====================
-let g:easytags_dynamic_files = 1
 set tags=doc/tags,./tags,~/.vim/doc/tags
+let g:easytags_dynamic_files = 1
+let g:easytags_suppress_ctags_warning = 1
+let g:easytags_auto_highlight = 0
+
+" Carregamento automático de sessão
+" =================================
+function LoadSession()
+  exe 'silent! source Session.vim'
+  exe 'colorscheme renato'
+endfunction
+
+autocmd VimLeavePre * silent! mksession!
+map ,l :call LoadSession()<CR>
