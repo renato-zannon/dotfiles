@@ -42,10 +42,6 @@
 	path = bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
         ignore = untracked
-[submodule "bundle/gem.vim"]
-	path = bundle/gem.vim
-	url = https://github.com/GutenYe/gem.vim.git
-        ignore = untracked
 [submodule "bundle/vim-easytags"]
 	path = bundle/vim-easytags
 	url = https://github.com/xolox/vim-easytags.git
@@ -54,3 +50,6 @@
 	path = bundle/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim.git
         ignore = untracked
+[submodule "bundle/vim-rake"]
+	path = bundle/vim-rake
+	url = https://github.com/tpope/vim-rake.git
