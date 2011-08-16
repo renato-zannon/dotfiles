@@ -58,3 +58,7 @@
 	path = bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
         ignore = untracked
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular
+        ignore = untracked
