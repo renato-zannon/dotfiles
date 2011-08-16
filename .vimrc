@@ -86,13 +86,6 @@ augroup general
   autocmd BufNewFile,BufRead *.zcml set ft=xml
 augroup END
 
-augroup rest
-  " formatação de commits do git segue mesmo padrão do rest
-  autocmd FileType rst,gitcommit set ai fo+=tqn tw=78 et sw=4 sts=4
-  " format list pattern
-  autocmd FileType rst,gitcommit set flp=^\\s*\\(\\d\\+\\\|[a-z]\\)[\\].)]\\s*
-augroup END
-
 augroup css
   autocmd FileType css set smartindent tw=78 ts=2 sts=2 sw=2 et
 augroup END
