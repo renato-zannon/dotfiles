@@ -83,6 +83,10 @@ augroup ruby
   autocmd FileType ruby set et ts=2 sw=2 sts=2 tw=78
 augroup END
 
+augroup markdown
+  autocmd FileType markdown set ai fo+=tqn tw=78 et sw=4 sts=4
+augroup END
+
 augroup cucumber
   autocmd FileType cucumber set et ts=2 sw=2 sts=2 tw=78
 augroup END
