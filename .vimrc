@@ -114,6 +114,10 @@ augroup END
 augroup haskell
   autocmd FileType haskell set sw=4 nosmartindent
 augroup END
+
+augroup vim
+  autocmd FileType vim set tw=100
+augroup END
 " Procura e substituição
 " ======================
 
@@ -167,7 +171,7 @@ highlight bad_false ctermbg=red guibg=red
 
 " Carregamento automático de sessão
 " =================================
-function LoadSession()
+function! LoadSession()
   exe 'silent! source Session.vim'
   exe 'colorscheme renato'
 endfunction
@@ -179,7 +183,9 @@ map ,l :call LoadSession()<CR>
 " =========
 set thesaurus+=~/.vim/thesaurus/mthesaur.txt
 
-" Text-width consistency
-" =====================
-set colorcolumn=+0
-autocmd! BufEnter,InsertEnter,InsertLeave * match OverLength /.\{78\}\zs.\+$/
+" Local vimrc
+" ==========
+if getcwd() =~? "/".expand("$USER")."/.*tnseguros" &&
+      \ filereadable("coding_standards.vim")
+  source coding_standards.vim
+endif
