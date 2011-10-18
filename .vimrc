@@ -130,10 +130,6 @@ set cursorline
 set cursorcolumn
 hi CursorLine cterm=none
 
-" Remoção de whitespaces 'sobrando'
-" ================================
-autocmd BufWrite * :%s/ \+$//e
-
 " Possibilidade de mudar de buffer sem salvá-lo
 " =============================================
 set hidden
