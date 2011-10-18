@@ -185,3 +185,8 @@ endfunction
 
 autocmd VimLeavePre * silent! mksession!
 map ,l :call LoadSession()<CR>
+
+" Text-width consistency
+" =====================
+set colorcolumn=+0
+autocmd! BufEnter,InsertEnter,InsertLeave * match OverLength /.\{78\}\zs.\+$/
