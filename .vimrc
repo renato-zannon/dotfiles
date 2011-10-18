@@ -52,22 +52,10 @@ colorscheme renato
 " Movimentação/navegação
 " ======================
 
-nnoremap <F7> :tabedit<Space>
-" Mapping <tab> to chage tabs on commands mode
-nmap <tab> :tabnext<CR>
-nmap <S-tab> :tabprevious<CR>
-
 " Mudança de buffer
 " -----------------
 nnoremap <C-h> :bp<CR>
-nnoremap <A-Left> :bp<CR>
 nnoremap <C-l> :bn<CR>
-nnoremap <A-Right> :bn<CR>
-inoremap <F7> <C-O>:edit<Space>
-inoremap <C-h> <C-O>:bp<CR>
-inoremap <A-Left> <C-O>:bp<CR>
-inoremap <C-l> <C-O>:bn<CR>
-inoremap <A-Right> <C-O>:bn<CR>
 
 " Quebra de linha no modo normal
 nnoremap <Return> i<Return><ESC>
