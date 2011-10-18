@@ -1,64 +1,60 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = http://github.com/scrooloose/syntastic.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = http://github.com/tpope/vim-rails.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/Conque-Shell"]
 	path = bundle/Conque-Shell
 	url = http://github.com/vim-scripts/Conque-Shell.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = http://github.com/tpope/vim-surround.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-cucumber"]
 	path = bundle/vim-cucumber
 	url = http://github.com/tpope/vim-cucumber.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-endwise"]
 	path = bundle/vim-endwise
 	url = http://github.com/tpope/vim-endwise.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = http://github.com/vim-ruby/vim-ruby.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-ruby-debugger"]
 	path = bundle/vim-ruby-debugger
 	url = http://github.com/astashov/vim-ruby-debugger.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/snipmate.vim"]
 	path = bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/tcomment_vim"]
 	path = bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
-        ignore = untracked
-[submodule "bundle/vim-easytags"]
-	path = bundle/vim-easytags
-	url = https://github.com/xolox/vim-easytags.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/dbext.vim"]
 	path = bundle/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-rake"]
 	path = bundle/vim-rake
 	url = https://github.com/tpope/vim-rake.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/vim-git"]
 	path = bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
-        ignore = untracked
+        ignore = dirty
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
-        ignore = untracked
+        ignore = dirty

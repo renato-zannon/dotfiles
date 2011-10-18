@@ -169,13 +169,6 @@ highlight whitespace ctermbg=red guibg=red
 autocmd Syntax * syn match bad_false /:false/ containedin=ALL
 highlight bad_false ctermbg=red guibg=red
 
-" Configuração easytags
-" =====================
-set tags=doc/tags,./tags,~/.vim/doc/tags
-let g:easytags_dynamic_files = 1
-let g:easytags_suppress_ctags_warning = 1
-let g:easytags_auto_highlight = 0
-
 " Carregamento automático de sessão
 " =================================
 function LoadSession()
