@@ -186,6 +186,10 @@ endfunction
 autocmd VimLeavePre * silent! mksession!
 map ,l :call LoadSession()<CR>
 
+" Thesaurus
+" =========
+set thesaurus+=~/.vim/thesaurus/mthesaur.txt
+
 " Text-width consistency
 " =====================
 set colorcolumn=+0
