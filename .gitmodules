@@ -58,3 +58,6 @@
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
         ignore = dirty
+[submodule "bundle/Rename"]
+	path = bundle/Rename
+	url = https://github.com/vim-scripts/Rename
