@@ -42,6 +42,10 @@
 	path = bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
         ignore = dirty
+[submodule "bundle/vim-easytags"]
+	path = bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
+        ignore = untracked
 [submodule "bundle/dbext.vim"]
 	path = bundle/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim.git
@@ -61,3 +65,4 @@
 [submodule "bundle/Rename"]
 	path = bundle/Rename
 	url = https://github.com/vim-scripts/Rename
+        ignore = dirty
