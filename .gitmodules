@@ -69,3 +69,6 @@
 [submodule "bundle/haskell.vim"]
 	path = bundle/haskell.vim
 	url = https://github.com/vim-scripts/haskell.vim.git
+[submodule "bundle/unicode-haskell"]
+	path = bundle/unicode-haskell
+	url = https://github.com/frerich/unicode-haskell.git
