@@ -193,3 +193,7 @@ if getcwd() =~? "/".expand("$USER")."/.*tnseguros" &&
       \ filereadable("coding_standards.vim")
   source coding_standards.vim
 endif
+
+" Par formatting
+" ==============
+map ,p !ippar -w<C-R>=&tw<CR>q<CR>
