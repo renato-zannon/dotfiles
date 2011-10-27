@@ -66,3 +66,6 @@
 	path = bundle/Rename
 	url = https://github.com/vim-scripts/Rename
         ignore = dirty
+[submodule "bundle/haskell.vim"]
+	path = bundle/haskell.vim
+	url = https://github.com/vim-scripts/haskell.vim.git
