@@ -204,3 +204,15 @@ endif
 " Par formatting
 " ==============
 map ,p !ippar -w<C-R>=&tw<CR>q<CR>
+
+
+" Whitespace removal
+" =================
+
+function! RemoveTrailingWhitespace()
+  let l:window_state = winsaveview()
+  silent! %s/\v +$//
+  call winrestview(l:window_state)
+endfunction
+
+nmap ,s :call RemoveTrailingWhitespace()<CR>
