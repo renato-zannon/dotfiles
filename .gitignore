@@ -2,5 +2,5 @@
 !.gitmodules
 !.gitignore
 !.vim/
-!.bashrc
-!.inputrc
+!.*rc
+.dmrc
