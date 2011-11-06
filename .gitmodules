@@ -1,64 +1,64 @@
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
 	url = http://github.com/scrooloose/syntastic.git
         ignore = dirty
-[submodule "bundle/vim-rails"]
-	path = bundle/vim-rails
+[submodule ".vim/bundle/vim-rails"]
+	path = .vim/bundle/vim-rails
 	url = http://github.com/tpope/vim-rails.git
         ignore = dirty
-[submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
 	url = http://github.com/tpope/vim-fugitive.git
         ignore = dirty
-[submodule "bundle/Conque-Shell"]
-	path = bundle/Conque-Shell
+[submodule ".vim/bundle/Conque-Shell"]
+	path = .vim/bundle/Conque-Shell
 	url = http://github.com/vim-scripts/Conque-Shell.git
         ignore = dirty
-[submodule "bundle/vim-surround"]
-	path = bundle/vim-surround
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
 	url = http://github.com/tpope/vim-surround.git
         ignore = dirty
-[submodule "bundle/vim-cucumber"]
-	path = bundle/vim-cucumber
+[submodule ".vim/bundle/vim-cucumber"]
+	path = .vim/bundle/vim-cucumber
 	url = http://github.com/tpope/vim-cucumber.git
         ignore = dirty
-[submodule "bundle/vim-endwise"]
-	path = bundle/vim-endwise
+[submodule ".vim/bundle/vim-endwise"]
+	path = .vim/bundle/vim-endwise
 	url = http://github.com/tpope/vim-endwise.git
         ignore = dirty
-[submodule "bundle/vim-ruby"]
-	path = bundle/vim-ruby
+[submodule ".vim/bundle/vim-ruby"]
+	path = .vim/bundle/vim-ruby
 	url = http://github.com/vim-ruby/vim-ruby.git
         ignore = dirty
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
+[submodule ".vim/bundle/snipmate.vim"]
+	path = .vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
         ignore = dirty
-[submodule "bundle/tcomment_vim"]
-	path = bundle/tcomment_vim
+[submodule ".vim/bundle/tcomment_vim"]
+	path = .vim/bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim.git
         ignore = dirty
-[submodule "bundle/vim-easytags"]
-	path = bundle/vim-easytags
+[submodule ".vim/bundle/vim-easytags"]
+	path = .vim/bundle/vim-easytags
 	url = https://github.com/xolox/vim-easytags.git
         ignore = untracked
-[submodule "bundle/dbext.vim"]
-	path = bundle/dbext.vim
+[submodule ".vim/bundle/dbext.vim"]
+	path = .vim/bundle/dbext.vim
 	url = https://github.com/vim-scripts/dbext.vim.git
         ignore = dirty
-[submodule "bundle/vim-rake"]
-	path = bundle/vim-rake
+[submodule ".vim/bundle/vim-rake"]
+	path = .vim/bundle/vim-rake
 	url = https://github.com/tpope/vim-rake.git
         ignore = dirty
-[submodule "bundle/vim-git"]
-	path = bundle/vim-git
+[submodule ".vim/bundle/vim-git"]
+	path = .vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
         ignore = dirty
-[submodule "bundle/tabular"]
-	path = bundle/tabular
+[submodule ".vim/bundle/tabular"]
+	path = .vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular
         ignore = dirty
-[submodule "bundle/Rename"]
-	path = bundle/Rename
+[submodule ".vim/bundle/Rename"]
+	path = .vim/bundle/Rename
 	url = https://github.com/vim-scripts/Rename
         ignore = dirty
