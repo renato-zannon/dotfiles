@@ -211,7 +211,7 @@ map ,p !ippar -w<C-R>=&tw<CR>q<CR>
 
 function! RemoveTrailingWhitespace()
   let l:window_state = winsaveview()
-  silent! %s/\v +$//
+  silent! %s/\v\s+$//
   call winrestview(l:window_state)
 endfunction
 
