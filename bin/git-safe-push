@@ -1,0 +1,34 @@
+#!/bin/bash
+
+GIT_ROOT=`git rev-parse --show-toplevel`
+cd $GIT_ROOT
+
+function run_rspec()
+{
+  if [ -d spec ]; then
+    local rspec_exec=`if [ -x bin/spec ];then echo "bin/spec"; else echo "bin/rspec";fi`
+    $rspec_exec spec
+  else
+    true;
+  fi
+}
+
+function run_minitest()
+{
+  if $(test -d test && test -f test/*test.rb); then
+    ruby test/*test.rb;
+  else
+    true;
+  fi
+}
+
+function run_cucumber()
+{
+  if [ -d features ]; then
+    bin/cucumber features;
+  else
+    true;
+  fi
+}
+
+(run_rspec && run_minitest && run_cucumber) && git push $*

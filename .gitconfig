@@ -1,0 +1,17 @@
+[core]
+	editor = vim
+[user]
+	email = renato.riccieri@gmail.com
+	name = Renato Riccieri
+	signingkey = 75E7D62E
+[color]
+	ui = auto
+[color "status"]
+	untracked = cyan
+[github]
+	user = riccieri
+[merge]
+	tool = vimdiff
+[alias]
+  	summary = !~/bin/git-summary
+        safe-push = !/home/renato/bin/git-safe-push
