@@ -7,9 +7,6 @@ autocmd!
 " permita que arquivos definam configuração
 set modeline
 
-" permita uso do mouse em todos os modos
-"set mouse=a
-
 " exiba os números de linha
 set number
 
@@ -20,6 +17,11 @@ set history=50
 " first list the available options and complete the longest common part, then
 " have further <Tab>s cycle through the possibilities:
 set wildmode=list:longest,full
+
+" Wilder command-line completion
+set wildmenu
+
+let mapleader=","
 
 " Pathogen, to help plugin install
 call pathogen#infect()
@@ -49,17 +51,12 @@ syntax on
 let transparent_background=1
 colorscheme renato
 
-" Movimentação/navegação
-" ======================
-
-" Mudança de buffer
-" -----------------
-nnoremap <C-h> :bp<CR>
-nnoremap <C-l> :bn<CR>
-
 " Quebra de linha no modo normal
 nnoremap <Return> i<Return><ESC>
 nnoremap <NL> $a<Return><ESC>
+
+" Removendo o irritante K no modo normal
+nnoremap K kJ
 
 " Configurações de tipo de arquivo e identação
 " ============================================
@@ -79,6 +76,7 @@ augroup css
 augroup END
 
 "au BufNewFile,BufRead *.rb,*.rhtml,*.erb set tw=80 ts=2
+
 augroup ruby
   autocmd FileType ruby set et ts=2 sw=2 sts=2 tw=78
 augroup END
@@ -122,11 +120,11 @@ augroup END
 augroup vim
   autocmd FileType vim set tw=100
 augroup END
+
 " Procura e substituição
 " ======================
 
 " case-insensitive, a menos que haja maiúsculas
-" set ignorecase
  set smartcase
 
 " incremental
