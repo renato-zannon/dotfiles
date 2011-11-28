@@ -225,11 +225,21 @@ function! s:SpecFileFor(file)
   endif
 endfunction
 
+function! s:SpecCommand()
+  if executable("spec")
+    let executable = "spec"
+  elseif executable("rspec")
+    let executable = "rspec"
+  endif
+
+  return executable." --drb "
+endfunction
+
 function! s:RunSpec()
   let current_file = expand("%")
   let spec_file = <SID>SpecFileFor(current_file)
 
-  let spec_command = "bin/spec ".spec_file
+  let spec_command = <SID>SpecCommand().spec_file
 
   let terminal = exists("$COLORTERM") ? $COLORTERM : "xterm"
   let term_command = terminal." -e bash -c \"".spec_command."; read\""
@@ -237,4 +247,4 @@ function! s:RunSpec()
   exec ":silent! !".term_command
 endfunction
 
-nnoremap <leader>t :call <SID>RunSpec()<cr>
+nnoremap <silent> <leader>t :call <SID>RunSpec()<cr>
