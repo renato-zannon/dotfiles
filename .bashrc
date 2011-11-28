@@ -109,6 +109,7 @@ export PATH="./bin:$PATH"
 
 # Just to be explicit =)
 export EDITOR="vim"
+export COLORTERM="roxterm"
 
 shopt -s dirspell
 shopt -s globstar
