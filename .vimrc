@@ -216,7 +216,7 @@ endfunction
 
 nmap <leader>s :call RemoveTrailingWhitespace()<CR>
 
-function! s:SpecFileFor(file)
+function! s:SpecFilenameFor(file)
   if a:file =~ '^spec'
     return a:file
   else
@@ -226,20 +226,26 @@ function! s:SpecFileFor(file)
 endfunction
 
 function! s:SpecCommand()
+  let spec_command = ""
+
   if executable("spec")
-    let executable = "spec"
+    let spec_command = "spec"
   elseif executable("rspec")
-    let executable = "rspec"
+    let spec_command = "rspec"
   endif
 
-  return executable." --drb "
+  if executable("bundle")
+    return "bundle exec ".spec_command
+  else
+    return spec_command
+  endif
 endfunction
 
 function! s:RunSpec()
   let current_file = expand("%")
-  let spec_file = <SID>SpecFileFor(current_file)
+  let spec_file = <SID>SpecFilenameFor(current_file)
 
-  let spec_command = <SID>SpecCommand().spec_file
+  let spec_command = <SID>SpecCommand()." ".spec_file
 
   let terminal = exists("$COLORTERM") ? $COLORTERM : "xterm"
   let term_command = terminal." -e bash -c \"".spec_command."; read\""
@@ -248,3 +254,18 @@ function! s:RunSpec()
 endfunction
 
 nnoremap <silent> <leader>t :call <SID>RunSpec()<cr>
+
+function! s:CreateSpec()
+  let current_file = expand("%")
+  let spec_file = <SID>SpecFilenameFor(current_file)
+
+  let spec_path = fnamemodify(spec_file, ":h")
+  if !isdirectory(spec_path)
+    exec("autocmd BufWritePre ".spec_file." execute \"silent! !mkdir -p ".spec_path."\"")
+  endif
+
+  exec ":vsplit ".spec_file
+  exec ":normal! \<c-w>L"
+endfunction
+
+nnoremap <leader>cs :call <SID>CreateSpec()<cr>
