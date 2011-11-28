@@ -187,7 +187,7 @@ function! LoadSession()
 endfunction
 
 autocmd VimLeavePre * silent! mksession!
-map ,l :call LoadSession()<CR>
+map <leader>l :call LoadSession()<CR>
 
 " Thesaurus
 " =========
@@ -214,7 +214,7 @@ function! RemoveTrailingWhitespace()
   call winrestview(l:window_state)
 endfunction
 
-nmap ,s :call RemoveTrailingWhitespace()<CR>
+nmap <leader>s :call RemoveTrailingWhitespace()<CR>
 
 function! s:SpecFileFor(file)
   if a:file =~ '^spec'
