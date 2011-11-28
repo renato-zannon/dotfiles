@@ -215,3 +215,26 @@ function! RemoveTrailingWhitespace()
 endfunction
 
 nmap ,s :call RemoveTrailingWhitespace()<CR>
+
+function! s:SpecFileFor(file)
+  if a:file =~ '^spec'
+    return a:file
+  else
+    let bare = substitute(a:file, "app\/\\|.rb$", "", "g")
+    return "spec/".bare."_spec.rb"
+  endif
+endfunction
+
+function! s:RunSpec()
+  let current_file = expand("%")
+  let spec_file = <SID>SpecFileFor(current_file)
+
+  let spec_command = "bin/spec ".spec_file
+
+  let terminal = exists("$COLORTERM") ? $COLORTERM : "xterm"
+  let term_command = terminal." -e bash -c \"".spec_command."; read\""
+
+  exec ":silent! !".term_command
+endfunction
+
+nnoremap <leader>t :call <SID>RunSpec()<cr>
