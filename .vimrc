@@ -101,7 +101,8 @@ augroup END
 augroup text
   autocmd FileType mail,human set nonumber
   autocmd FileType mail,human set spell spelllang=pt,en
-  autocmd FileType mail,human set fo=t tw=100
+  autocmd FileType human set fo=t tw=100
+  autocmd FileType mail set tw=70
   autocmd FileType help set nospell
 augroup END
 
@@ -201,7 +202,7 @@ endif
 
 " Par formatting
 " ==============
-map ,p !ippar -w<C-R>=&tw<CR>q<CR>
+map <leader>p !ippar -w<C-R>=&tw ? &tw : 80<CR>q<CR>
 
 
 " Whitespace removal
