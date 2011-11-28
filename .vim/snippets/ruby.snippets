@@ -430,3 +430,21 @@ snippet lb
 	    <% end %>
 	  <% end %>
 	<% end %>
+
+snippet spec
+	require 'spec_helper'
+
+	describe ${1:class} do
+	  ${2}
+	end
+
+snippet it
+	it "${1:behaviour}" do
+	  ${2}
+	end
+
+snippet sbv
+	${1:subject}.should be_valid
+
+snippet snbv
+	${1:subject}.should_not be_valid
