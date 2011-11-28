@@ -269,3 +269,18 @@ function! s:CreateSpec()
 endfunction
 
 nnoremap <leader>cs :call <SID>CreateSpec()<cr>
+
+nmap ,s :call RemoveTrailingWhitespace()<CR>
+
+" Toggling virtualedit easier
+" ==========================
+
+function! ToggleVirtualedit()
+  if &virtualedit == "all"
+    exec "set virtualedit="
+  else
+    exec "set virtualedit=all"
+  endif
+endfunction
+
+map <leader>v :call ToggleVirtualedit()<CR>
