@@ -216,6 +216,9 @@ endfunction
 
 nmap <leader>s :call RemoveTrailingWhitespace()<CR>
 
+" RSpec mappings
+" ==============
+
 function! s:SpecFilenameFor(file)
   if a:file =~ '^spec'
     return a:file
@@ -269,8 +272,6 @@ function! s:CreateSpec()
 endfunction
 
 nnoremap <leader>cs :call <SID>CreateSpec()<cr>
-
-nmap ,s :call RemoveTrailingWhitespace()<CR>
 
 " Toggling virtualedit easier
 " ==========================
