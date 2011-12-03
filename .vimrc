@@ -10,8 +10,7 @@ set modeline
 " exiba os números de linha
 set number
 
-" tenha cinquenta linhas de histórico
-set history=50
+set history=5000
 
 " have command-line completion <Tab> (for filenames, help topics, option names)
 " first list the available options and complete the longest common part, then
