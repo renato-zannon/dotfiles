@@ -185,7 +185,7 @@ function! LoadSession()
   exe 'colorscheme renato'
 endfunction
 
-autocmd VimLeavePre * silent! mksession!
+" autocmd VimLeavePre * silent! mksession!
 map <leader>l :call LoadSession()<CR>
 
 " Thesaurus
