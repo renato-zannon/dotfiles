@@ -62,3 +62,6 @@
 	path = .vim/bundle/Rename
 	url = https://github.com/vim-scripts/Rename
         ignore = dirty
+[submodule ".vim/bundle/vim-latex"]
+	path = .vim/bundle/vim-latex
+	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
