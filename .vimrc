@@ -186,7 +186,7 @@ function! LoadSession()
 endfunction
 
 " autocmd VimLeavePre * silent! mksession!
-map <leader>l :call LoadSession()<CR>
+map <silent> <leader>l :call LoadSession()<CR>
 
 " Thesaurus
 " =========
@@ -201,7 +201,7 @@ endif
 
 " Par formatting
 " ==============
-map <leader>p !ippar -w<C-R>=&tw ? &tw : 80<CR>q<CR>
+map <silent> <leader>p !ippar -w<C-R>=&tw ? &tw : 80<CR>q<CR>
 
 
 " Whitespace removal
@@ -270,7 +270,7 @@ function! s:CreateSpec()
   exec ":normal! \<c-w>L"
 endfunction
 
-nnoremap <leader>cs :call <SID>CreateSpec()<cr>
+nnoremap <silent> <leader>cs :call <SID>CreateSpec()<cr>
 
 " Toggling virtualedit easier
 " ==========================
@@ -283,4 +283,4 @@ function! ToggleVirtualedit()
   endif
 endfunction
 
-map <leader>v :call ToggleVirtualedit()<CR>
+map <silent> <leader>v :call ToggleVirtualedit()<CR>
