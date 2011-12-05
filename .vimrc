@@ -284,3 +284,4 @@ function! ToggleVirtualedit()
 endfunction
 
 map <silent> <leader>v :call ToggleVirtualedit()<CR>
+map <silent> <leader>r :set <C-R>=&number ? "relativenumber" : "number"<CR><CR>
