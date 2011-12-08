@@ -285,3 +285,12 @@ endfunction
 
 map <silent> <leader>v :call ToggleVirtualedit()<CR>
 map <silent> <leader>r :set <C-R>=&number ? "relativenumber" : "number"<CR><CR>
+
+" Disable eclim by default
+" ========================
+let g:EclimDisabled=1
+
+" Enable eclim for java
+" =====================
+autocmd FileType java unlet g:EclimDisabled
+autocmd FileType java :exec "source $VIMHOME/plugin/eclim.vim"
