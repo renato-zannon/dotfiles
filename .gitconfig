@@ -15,3 +15,7 @@
 [alias]
   	summary = !~/bin/git-summary
         safe-push = !/home/renato/bin/git-safe-push
+[instaweb]
+    local = true
+    httpd = webrick
+    port  = 3000
