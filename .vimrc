@@ -1,56 +1,32 @@
-" Nocompatible mode
-set nocompatible
+" vim: fdm=marker
 
-" limpe qualquer autocommand existente
+set nocompatible
 autocmd!
 
-" permita que arquivos definam configuração
 set modeline
-
-" exiba os números de linha
 set number
-
 set history=5000
 
-" have command-line completion <Tab> (for filenames, help topics, option names)
-" first list the available options and complete the longest common part, then
-" have further <Tab>s cycle through the possibilities:
 set wildmode=list:longest,full
-
-" Wilder command-line completion
 set wildmenu
 
-let mapleader=","
-
-" Pathogen, to help plugin install
 call pathogen#infect()
-
-" Updating helptags
 call pathogen#helptags()
 
-" display the current mode and partially-typed commands in the status line:
 set showmode
 set showcmd
 
-" quebre linhas longas
 set wrap
 
-" Cores
-" ======
-
-" configuração de cores para fundo escuro
 set bg=dark
-
-" Set the number of columns to 256.  This requires a capable terminal.
 set t_Co=256
-
-" sintaxe colorida
 syntax on
-
 let transparent_background=1
 colorscheme renato
 
-" Quebra de linha no modo normal
+let mapleader=","
+nnoremap K kJ
+
 autocmd BufWinEnter * call <SID>UpdateCRMappings()
 
 fun! s:UpdateCRMappings()
@@ -69,11 +45,6 @@ fun! s:UpdateCRMappings()
   endif
 endfun
 
-" Removendo o irritante K no modo normal
-nnoremap K kJ
-
-" Configurações de tipo de arquivo e identação
-" ============================================
 
 " detecte os tipos de arquivo
 filetype plugin indent on
@@ -88,8 +59,6 @@ augroup END
 augroup css
   autocmd FileType css set smartindent tw=78 ts=2 sts=2 sw=2 et
 augroup END
-
-"au BufNewFile,BufRead *.rb,*.rhtml,*.erb set tw=80 ts=2
 
 augroup ruby
   autocmd FileType ruby set et ts=2 sw=2 sts=2 tw=78
