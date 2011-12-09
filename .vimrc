@@ -278,3 +278,9 @@ let g:EclimDisabled=1
 " =====================
 autocmd FileType java unlet g:EclimDisabled
 autocmd FileType java :exec "source $VIMHOME/plugin/eclim.vim"
+
+" Grepping made easy
+" ==================
+
+command! -nargs=1 SearchInRepo :silent! Ggrep! "\b<args>\b" | :copen
+nnoremap <leader>g :SearchInRepo <C-R><C-W>
