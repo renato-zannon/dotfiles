@@ -1,20 +1,20 @@
 [core]
-	editor = vim
+    editor = vim
 [user]
-	email = renato.riccieri@gmail.com
-	name = Renato Riccieri
-	signingkey = 75E7D62E
+    email = renato.riccieri@gmail.com
+    name = Renato Riccieri
+    signingkey = 75E7D62E
 [color]
-	ui = auto
+    ui = auto
 [color "status"]
-	untracked = cyan
+    untracked = cyan
 [github]
-	user = riccieri
+    user = riccieri
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [alias]
-  	summary = !~/bin/git-summary
-        safe-push = !/home/renato/bin/git-safe-push
+    summary = !~/bin/git-summary
+    safe-push = !/home/renato/bin/git-safe-push
 [instaweb]
     local = true
     httpd = webrick
