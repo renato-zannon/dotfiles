@@ -199,15 +199,24 @@ endfunction
 
 nnoremap <leader>s :call RemoveTrailingWhitespace()<CR>
 
-" RSpec mappings
+" RSpec mappings {{{
 " ==============
 
 function! s:SpecFilenameFor(file)
   if a:file =~ '^spec'
     return a:file
   else
-    let bare = substitute(a:file, "app\/\\|.rb$", "", "g")
-    return "spec/".bare."_spec.rb"
+    let bare_rails = substitute(a:file, "app\/\\|.rb$", "", "g")
+    let bare_ruby = substitute(a:file, "lib\/\\|.rb$", "", "g")
+
+    let rails_name = "spec/".bare_rails."_spec.rb"
+    let ruby_name = "spec/".bare_ruby."_spec.rb"
+
+    if filereadable(rails_name)
+      return rails_name
+    else
+      return ruby_name
+    end
   endif
 endfunction
 
@@ -255,6 +264,7 @@ function! s:CreateSpec()
 endfunction
 
 nnoremap <silent> <leader>cs :call <SID>CreateSpec()<cr>
+" }}}
 
 " Toggling virtualedit easier
 " ==========================
