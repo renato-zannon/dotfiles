@@ -51,8 +51,23 @@ let transparent_background=1
 colorscheme renato
 
 " Quebra de linha no modo normal
-nnoremap <Return> i<Return><ESC>
-nnoremap <NL> $a<Return><ESC>
+autocmd BufWinEnter * call <SID>UpdateCRMappings()
+
+fun! s:UpdateCRMappings()
+  let ctrl_enter_key = has("gui_running") ? "<C-Return>" : "<NL>"
+
+  if(&buftype != "quifix" && !exists("b:defined_cr_mappings"))
+    let b:defined_cr_mappings = 1
+
+          nnoremap <buffer> <silent> <Return>           i<Return><Esc>
+    exec "nnoremap <buffer> <silent> ".ctrl_enter_key." $a<Return><ESC>"
+  elseif(&buftype == "quickfix" && exists("b:defined_cr_mappings"))
+    unlet b:defined_cr_mappings
+
+          nunmap <buffer>  <Return>
+    exec "nunmap <buffer>  ".ctrl_enter_key
+  endif
+endfun
 
 " Removendo o irritante K no modo normal
 nnoremap K kJ
