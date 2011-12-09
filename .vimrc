@@ -170,7 +170,7 @@ function! LoadSession()
 endfunction
 
 " autocmd VimLeavePre * silent! mksession!
-map <silent> <leader>l :call LoadSession()<CR>
+nnoremap <silent> <leader>l :call LoadSession()<CR>
 
 " Thesaurus
 " =========
@@ -185,7 +185,7 @@ endif
 
 " Par formatting
 " ==============
-map <silent> <leader>p !ippar -w<C-R>=&tw ? &tw : 80<CR>q<CR>
+nnoremap <silent> <leader>p !ippar -w<C-R>=&tw ? &tw : 80<CR>q<CR>
 
 
 " Whitespace removal
@@ -197,7 +197,7 @@ function! RemoveTrailingWhitespace()
   call winrestview(l:window_state)
 endfunction
 
-nmap <leader>s :call RemoveTrailingWhitespace()<CR>
+nnoremap <leader>s :call RemoveTrailingWhitespace()<CR>
 
 " RSpec mappings
 " ==============
