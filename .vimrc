@@ -266,10 +266,10 @@ endfunction
 nnoremap <silent> <leader>cs :call <SID>CreateSpec()<cr>
 " }}}
 
-" Toggling virtualedit easier
-" ==========================
+" 'relativenumber' and 'visualedit' {{{
+" =================================
 
-function! ToggleVirtualedit()
+function! s:ToggleVirtualedit()
   if &virtualedit == "all"
     exec "set virtualedit="
   else
@@ -277,8 +277,22 @@ function! ToggleVirtualedit()
   endif
 endfunction
 
-map <silent> <leader>v :call ToggleVirtualedit()<CR>
-map <silent> <leader>r :set <C-R>=&number ? "relativenumber" : "number"<CR><CR>
+function! s:ToggleRelativeNumber()
+  if &relativenumber
+    set number
+    autocmd! relativenumber
+  else
+    set relativenumber
+
+    augroup relativenumber
+      autocmd CursorMoved <buffer> set number | autocmd! relativenumber
+    augroup END
+  endif
+endfunction
+
+nnoremap <silent> <leader>v :call <sid>ToggleVirtualedit()<CR>
+nnoremap <silent> <leader>r :call <sid>ToggleRelativeNumber()<CR>
+" }}}
 
 " Disable eclim by default
 " ========================
