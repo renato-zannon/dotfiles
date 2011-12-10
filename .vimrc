@@ -24,9 +24,22 @@ syntax on
 let transparent_background=1
 colorscheme renato
 
+set smartcase
+set incsearch
+
+set cursorline
+set cursorcolumn
+
+set hidden
+
+set foldmethod=manual
+set smartindent
+set shiftwidth=2
+
 let mapleader=","
 nnoremap K kJ
 
+" <Return> and <CTRL-Return> {{{
 autocmd BufWinEnter * call <SID>UpdateCRMappings()
 
 fun! s:UpdateCRMappings()
@@ -44,9 +57,9 @@ fun! s:UpdateCRMappings()
     exec "nunmap <buffer>  ".ctrl_enter_key
   endif
 endfun
+" }}}
 
-
-" detecte os tipos de arquivo
+" Filetype-specific settings {{{
 filetype plugin indent on
 
 augroup general
@@ -103,74 +116,40 @@ augroup END
 
 augroup vim
   autocmd FileType vim set tw=100
-augroup END
+augroup END"}}}
 
-" Procura e substituição
-" ======================
-
-" case-insensitive, a menos que haja maiúsculas
- set smartcase
-
-" incremental
-set incsearch
-
-" Posicionamento do cursor
-" ========================
-set cursorline
-set cursorcolumn
-hi CursorLine cterm=none
-
-" Possibilidade de mudar de buffer sem salvá-lo
-" =============================================
-set hidden
-
-" Configuração do syntastic
-" =========================
+" Syntastic {{{
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_auto_loc_list=1
 let g:syntastic_enable_signs=1
+" }}}
 
-" Folds automáticos podem atrapalhar...
-" =====================================
-set foldmethod=manual
-
-" Mudando diretório de snippets
-" =============================
+" SnipMate {{{
 let g:snippets_dir="~/.vim/snippets"
+" }}}
 
-" Identação padrão
-" ================
-set smartindent
-set shiftwidth=2
-
-" Deixar whitespace 'sobrando' vermelho
-" =====================================
-autocmd Syntax * syn match whitespace /\s\+$/ containedin=ALL
-highlight whitespace ctermbg=red guibg=red
-
-" Marcar 'false' quando colocado como symbol
-" ==========================================
-autocmd Syntax * syn match bad_false /:false/ containedin=ALL
-highlight bad_false ctermbg=red guibg=red
-
-" Configuração easytags
-" =====================
+" Easytags {{{
 set tags=tmp/tags
 let g:easytags_dynamic_files = 1
 let g:easytags_suppress_ctags_warning = 1
 let g:easytags_auto_highlight = 0
+" }}}
 
-" Carregamento automático de sessão
-" =================================
-function! LoadSession()
-  exe 'silent! source Session.vim'
-  exe 'colorscheme renato'
-endfunction
+" Eclim {{{
+let g:EclimDisabled=1 " disabled by default
 
-" autocmd VimLeavePre * silent! mksession!
-nnoremap <silent> <leader>l :call LoadSession()<CR>
+" Enabled for java
+autocmd FileType java unlet g:EclimDisabled
+autocmd FileType java :exec "source $VIMHOME/plugin/eclim.vim"
+" }}}
+
+
+" Highlight the :false symbol
+" ==========================================
+autocmd Syntax * syn match bad_false /:false/ containedin=ALL
+highlight bad_false ctermbg=red guibg=red
 
 " Thesaurus
 " =========
@@ -187,9 +166,9 @@ endif
 " ==============
 nnoremap <silent> <leader>p !ippar -w<C-R>=&tw ? &tw : 80<CR>q<CR>
 
-
-" Whitespace removal
-" =================
+" Whitespace removal {{{
+autocmd Syntax * syn match whitespace /\s\+$/ containedin=ALL
+highlight whitespace ctermbg=red guibg=red
 
 function! RemoveTrailingWhitespace()
   let l:window_state = winsaveview()
@@ -198,9 +177,9 @@ function! RemoveTrailingWhitespace()
 endfunction
 
 nnoremap <leader>s :call RemoveTrailingWhitespace()<CR>
+" }}}
 
 " RSpec mappings {{{
-" ==============
 
 function! s:SpecFilenameFor(file)
   if a:file =~ '^spec'
@@ -267,7 +246,6 @@ nnoremap <silent> <leader>cs :call <SID>CreateSpec()<cr>
 " }}}
 
 " 'relativenumber' and 'visualedit' {{{
-" =================================
 
 function! s:ToggleVirtualedit()
   if &virtualedit == "all"
@@ -293,15 +271,6 @@ endfunction
 nnoremap <silent> <leader>v :call <sid>ToggleVirtualedit()<CR>
 nnoremap <silent> <leader>r :call <sid>ToggleRelativeNumber()<CR>
 " }}}
-
-" Disable eclim by default
-" ========================
-let g:EclimDisabled=1
-
-" Enable eclim for java
-" =====================
-autocmd FileType java unlet g:EclimDisabled
-autocmd FileType java :exec "source $VIMHOME/plugin/eclim.vim"
 
 " Grepping made easy
 " ==================
