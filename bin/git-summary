@@ -3,4 +3,4 @@
 set -e
 
 summary_format='format:%C(yellow)%h%Creset %C(blue bold)¬%an¬%Creset %Creset§%s§ %C(red)%d%Creset'
-git log --pretty="$summary_format" --color=always --graph $*|sed -re 's/¬([[:alpha:]]+)[^¬]*¬/\1/' -e 's/§(.{,60})[^§]*§/\1/'|less -R
+git log --pretty="$summary_format" --color=always --graph $*|sed -re 's/¬([[:alpha:]]+)[^¬]*¬/\1/' -e 's/§(.{,60})[^§]*§/\1/'|less -RSFX
