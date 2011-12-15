@@ -78,3 +78,6 @@
 	path = .vim/bundle/vim-textobj-rubyblock
 	url = https://github.com/nelstrom/vim-textobj-rubyblock.git
         ignore = dirty
+[submodule ".vim/bundle/vim-handlebars"]
+	path = .vim/bundle/vim-handlebars
+	url = https://github.com/nono/vim-handlebars
