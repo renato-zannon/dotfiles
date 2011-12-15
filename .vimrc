@@ -49,14 +49,15 @@ nnoremap g$ :tablast<CR>
 autocmd BufWinEnter * call <SID>UpdateCRMappings()
 
 fun! s:UpdateCRMappings()
-  let ctrl_enter_key = has("gui_running") ? "<C-Return>" : "<NL>"
+  let ctrl_enter_key  = has("gui_running") ? "<C-Return>" : "<NL>"
+  let on_normal_buffer = (&buftype != "quickfix" && &modifiable)
 
-  if(&buftype != "quifix" && !exists("b:defined_cr_mappings"))
+  if(on_normal_buffer && !exists("b:defined_cr_mappings"))
     let b:defined_cr_mappings = 1
 
           nnoremap <buffer> <silent> <Return>           i<Return><Esc>
     exec "nnoremap <buffer> <silent> ".ctrl_enter_key." $a<Return><ESC>"
-  elseif(&buftype == "quickfix" && exists("b:defined_cr_mappings"))
+  elseif(!on_normal_buffer && exists("b:defined_cr_mappings"))
     unlet b:defined_cr_mappings
 
           nunmap <buffer>  <Return>
