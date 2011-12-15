@@ -39,6 +39,12 @@ set shiftwidth=2
 let mapleader=","
 nnoremap K kJ
 
+nnoremap H :bprevious<CR>
+nnoremap L :bnext<CR>
+
+nnoremap g0 :tabfirst<CR>
+nnoremap g$ :tablast<CR>
+
 " <Return> and <CTRL-Return> {{{
 autocmd BufWinEnter * call <SID>UpdateCRMappings()
 
