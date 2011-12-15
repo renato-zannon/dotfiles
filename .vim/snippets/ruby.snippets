@@ -422,26 +422,11 @@ snippet tas
 
 snippet pry
 	require 'pry'; binding.pry
-# 'Listing' snippets
-snippet lb
-	<% listing do |lb| %>
-	  <% lb.head do %>
-	    <% lb.row do %>
-	      <%= lb.headers(${1:Report's class}, ${2:fields}) %>
-	    <% end %>
-	  <% end %>
-	<% end %>
 
-snippet spec
-	require 'spec_helper'
-
-	describe ${1:class} do
-	  ${2}
-	end
-
-snippet it
-	it "${1:behaviour}" do
-	  ${2}
+snippet dpry
+	if $debug
+		require 'pry'; binding.pry
+	  $debug = false
 	end
 
 snippet sbv
