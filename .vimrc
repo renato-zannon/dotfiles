@@ -145,6 +145,12 @@ autocmd FileType java unlet g:EclimDisabled
 autocmd FileType java :exec "source $VIMHOME/plugin/eclim.vim"
 " }}}
 
+" CTRL-P {{{
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+" }}}
 
 " Highlight the :false symbol
 " ==========================================

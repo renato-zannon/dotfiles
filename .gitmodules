@@ -81,3 +81,8 @@
 [submodule ".vim/bundle/vim-handlebars"]
 	path = .vim/bundle/vim-handlebars
 	url = https://github.com/nono/vim-handlebars
+        ignore = dirty
+[submodule ".vim/bundle/ctrlp.vim"]
+	path = .vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+        ignore = dirty
