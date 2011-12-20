@@ -165,7 +165,12 @@ autocmd FileType java :exec "source $VIMHOME/plugin/eclim.vim"
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files -co']
+
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("t")': ['<c-cr>'],
+    \ 'AcceptSelection("h")': ['<c-s>'],
+    \ }
 " }}}
 
 " Highlight the :false symbol
