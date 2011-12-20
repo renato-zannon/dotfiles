@@ -39,9 +39,18 @@ set shiftwidth=2
 let mapleader=","
 nnoremap K kJ
 
+" Command-line abbreviations
+" ==========================
+cnoreabbrev sel '<,'>
+cnoreabbrev sels '<,'>s
+cnoreabbrev selg '<,'>g
+
+cnoreabbrev mod '[,']
+cnoreabbrev mods '[,']s
+cnoreabbrev modg '[,']g
+
 nnoremap H :bprevious<CR>
 nnoremap L :bnext<CR>
-
 nnoremap g0 :tabfirst<CR>
 nnoremap g$ :tablast<CR>
 
