@@ -186,6 +186,7 @@ endif
 " Par formatting
 " ==============
 nnoremap <silent> <leader>p !ippar -w<C-R>=&tw ? &tw : 80<CR>q<CR>
+vnoremap <silent> <leader>p !par -w<C-R>=&tw ? &tw : 80<CR>q<CR>
 
 " Whitespace removal {{{
 autocmd Syntax * syn match whitespace /\s\+$/ containedin=ALL
