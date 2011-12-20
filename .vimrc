@@ -24,6 +24,7 @@ syntax on
 let transparent_background=1
 colorscheme renato
 
+set ignorecase
 set smartcase
 set incsearch
 
