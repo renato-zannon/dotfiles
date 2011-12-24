@@ -305,3 +305,34 @@ nnoremap <silent> <leader>r :call <sid>ToggleRelativeNumber()<CR>
 
 command! -nargs=1 SearchInRepo :silent! Ggrep! "\b<args>\b" | :copen
 nnoremap <leader>g :SearchInRepo <C-R><C-W>
+
+" Promote to let
+" ==============
+
+" Transform 'foo = bar' into 'let(:foo) { bar }'
+" Borrowed from @garybernhardt: https://github.com/garybernhardt
+
+function! s:PromoteToLet()
+  .s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  normal ==
+  normal! f{w
+endfunction
+
+nnoremap <leader>l :call <SID>PromoteToLet()<cr>
+
+" Promote to do
+" =============
+
+function! s:PromoteToDo()
+  " Go to closest '{'
+  call search("{", 'ce', line('.'))
+  call search("{", 'bce', line('.'))
+
+  normal! "ddi{
+  s/{\(\n\s*\)*}/do\rend/
+  normal! k
+  put d
+  normal! k=2j
+endfunction
+
+nnoremap <leader>d :call <SID>PromoteToDo()<cr>
