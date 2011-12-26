@@ -58,6 +58,8 @@ nnoremap g$ :tablast<CR>
 noremap <BS> ^
 noremap ç g_
 
+noremap <leader>a :Tabularize /
+
 " <Return> and <CTRL-Return> {{{
 autocmd BufWinEnter * call <SID>UpdateCRMappings()
 
