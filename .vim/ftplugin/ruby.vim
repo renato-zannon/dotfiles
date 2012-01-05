@@ -1,5 +1,11 @@
 " vim: fdm=marker
 
+if exists("g:ruby_settings_loaded")
+  finish
+else
+  let g:ruby_settings_loaded = 1
+endif
+
 augroup ruby
   autocmd FileType ruby set et ts=2 sw=2 sts=2 tw=78
 augroup END
