@@ -81,7 +81,7 @@ fun! s:UpdateCRMappings()
     let b:defined_cr_mappings = 1
 
           nnoremap <buffer> <silent> <Return>           i<Return><Esc>
-    exec "nnoremap <buffer> <silent> ".ctrl_enter_key." $a<Return><ESC>"
+    exec "nnoremap <buffer> <silent> ".ctrl_enter_key." o<ESC>0D"
   elseif(!on_normal_buffer && exists("b:defined_cr_mappings"))
     unlet b:defined_cr_mappings
 
