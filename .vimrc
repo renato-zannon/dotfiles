@@ -184,37 +184,16 @@ let g:ctrlp_prompt_mappings = {
     \ }
 " }}}
 
-" Coding standards
-" ================
-
-autocmd BufReadPost * call LoadCodingStandards()
-
-function! LoadCodingStandards()
-  if !exists("g:parsed_standards")
-    let g:parsed_standards = []
-  endif
-
-  let fname = expand(getcwd()."/coding_standards.vim")
-  let already_parsed = index(g:parsed_standards, fname) != -1
-
-  if !already_parsed && filereadable(fname)
-    if TrustedScript(fname)
-      execute "source ".fname
-    else
-      let choice = input("Trust coding standards ".fname."? [y,N]", "N")
-      if choice ==? "y"
-        call TrustScript(fname)
-        execute "source ".fname
-      endif
-    end
-    call add(g:parsed_standards, fname)
-  endif
-
-endfunction
-
 " Thesaurus
 " =========
 set thesaurus+=~/.vim/thesaurus/mthesaur.txt
+
+" Local vimrc
+" ==========
+if getcwd() =~? "/".expand("$USER")."/.*tnseguros" &&
+      \ filereadable("coding_standards.vim")
+  source coding_standards.vim
+endif
 
 " Par formatting
 " ==============
