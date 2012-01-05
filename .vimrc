@@ -58,7 +58,17 @@ nnoremap g$ :tablast<CR>
 noremap <BS> ^
 noremap ç g_
 
-noremap <leader>a :Tabularize /
+noremap ' `
+
+noremap <leader>a  :Tabularize /
+noremap <leader>as :<C-R><C-R>=<SID>PrintAlignCmd()<CR>
+
+function! s:PrintAlignCmd()
+  let cmd = "Tabularize / \\?/l0r0"
+  let prev_pos = getcmdpos()
+  call setcmdpos(prev_pos+15) " Just after the '*'
+  return cmd
+endfunction
 
 " <Return> and <CTRL-Return> {{{
 autocmd BufWinEnter * call <SID>UpdateCRMappings()
