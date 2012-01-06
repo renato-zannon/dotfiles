@@ -3,11 +3,13 @@ import XMonad.Config.Gnome
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders
 import XMonad.Actions.WindowGo
+import XMonad.Hooks.ManageHelpers
 
 myManageHook = composeAll [
     className =? "Unity-2d-panel"    --> doIgnore,
     className =? "Unity-2d-launcher" --> doFloat,
-    appName   =? "Synapse"           --> doIgnore
+    appName   =? "Synapse"           --> doIgnore,
+    isFullscreen --> doFullFloat
     ]
 
 main = xmonad $ gnomeConfig {
@@ -22,6 +24,6 @@ main = xmonad $ gnomeConfig {
        ("M-v",  raiseMaybe (spawn "gvim --servername GVIM") (className =? "Gvim")),
        ("M-t",  runOrRaise "gnome-terminal"                 (title     =? "Terminal")),
        ("M-e",  runOrRaise "thunderbird"                    (title     =? "Thunderbird")),
-       ("M-b",  runOrRaise "x-www-browser"                  (className =? "X-www-browser")),
+       ("M-i",  runOrRaiseNext "x-www-browser"              (className =? "X-www-browser")),
        ("M-g",  raise (title =? "Guard"))
      ]
