@@ -1,0 +1,25 @@
+# Vi-like bindings everywhere! Yay!
+
+binding "gtk-vi-text-entry" {
+  bind "<ctrl>h" { "delete-from-cursor" (chars, -1) }
+  bind "<ctrl>u" { "delete-from-cursor" (paragraph-ends, -1) }
+  bind "<ctrl>w" { "delete-from-cursor" (word-ends, -1) }
+}
+
+class "GtkEntry" binding "gtk-vi-text-entry"
+class "GtkTextView" binding "gtk-vi-text-entry"
+
+
+# GVim "fixes"
+
+style "no-resize-handle"
+{
+    GtkWindow::resize-grip-height = 0
+    GtkWindow::resize-grip-width = 0
+}
+class "GtkWidget" style "no-resize-handle"
+
+style "vimfix" {
+  bg[NORMAL] = "#111111"
+}
+widget "vim-main-window.*GtkForm" style "vimfix"
