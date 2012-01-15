@@ -20,6 +20,7 @@ main = xmonad $ gnomeConfig {
 	manageHook  = myManageHook <+> manageHook gnomeConfig,
 	borderWidth = 1,
 	focusedBorderColor = "#00a6c5",
+	focusFollowsMouse  = False,
 	layoutHook  = myLayoutHook,
 	terminal    = "gnome-terminal",
 	modMask     = mod4Mask
