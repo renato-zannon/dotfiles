@@ -105,3 +105,7 @@ export COLORTERM="roxterm"
 shopt -s dirspell
 shopt -s globstar
 bind Space:magic-space
+
+function title() {
+  echo -en "\033]2;$@\007"
+}
