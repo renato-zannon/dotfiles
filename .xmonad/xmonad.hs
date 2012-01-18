@@ -22,13 +22,13 @@ main = xmonad $ gnomeConfig {
 	focusedBorderColor = "#00a6c5",
 	focusFollowsMouse  = False,
 	layoutHook  = myLayoutHook,
-	terminal    = "gnome-terminal",
+	terminal    = "urxvt",
 	modMask     = mod4Mask
     }
     `additionalKeysP` [
        ("M-p",  spawn "synapse"),
        ("M-v",  raiseMaybe (spawn "gvim --servername GVIM") (className =? "Gvim")),
-       ("M-t",  runOrRaise "gnome-terminal"                 (title     =? "Terminal")),
+       ("M-t",  runOrRaise "urxvt"                          (title     =? "Terminal")),
        ("M-e",  runOrRaise "thunderbird"                    (title     =? "Thunderbird")),
        ("M-i",  runOrRaiseNext "x-www-browser"              (className =? "X-www-browser")),
        ("M-g",  raise (title =? "Guard")),
