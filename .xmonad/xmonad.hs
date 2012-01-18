@@ -6,18 +6,19 @@ import XMonad.Actions.WindowGo
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.Reflect
 import XMonad.Layout.MultiToggle
+import XMonad.Hooks.ManageDocks
 
 myManageHook = composeAll [
+    appName   =? "Synapse"           --> doIgnore,
     className =? "Unity-2d-panel"    --> doIgnore,
     className =? "Unity-2d-launcher" --> doFloat,
-    appName   =? "Synapse"           --> doIgnore,
     isFullscreen --> doFullFloat
     ]
 
-myLayoutHook = mkToggle (single REFLECTX) $ smartBorders $ layoutHook gnomeConfig
+myLayoutHook = avoidStruts $ mkToggle (single REFLECTX) $ smartBorders $ layoutHook gnomeConfig
 
 main = xmonad $ gnomeConfig {
-	manageHook  = myManageHook <+> manageHook gnomeConfig,
+	manageHook  = manageDocks <+> myManageHook <+> manageHook gnomeConfig,
 	borderWidth = 1,
 	focusedBorderColor = "#00a6c5",
 	focusFollowsMouse  = False,
@@ -27,6 +28,7 @@ main = xmonad $ gnomeConfig {
     }
     `additionalKeysP` [
        ("M-p",  spawn "synapse"),
+       ("M-b",  sendMessage ToggleStruts),
        ("M-v",  raiseMaybe (spawn "gvim --servername GVIM") (className =? "Gvim")),
        ("M-t",  runOrRaise "urxvt"                          (title     =? "Terminal")),
        ("M-e",  runOrRaise "thunderbird"                    (title     =? "Thunderbird")),
