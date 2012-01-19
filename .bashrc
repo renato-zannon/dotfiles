@@ -92,8 +92,7 @@ export `gnome-keyring-daemon -s --components=ssh`
 # Sets the console to vi mode
 set -o vi
 
-# Nifty alias :)
-alias "desktop_on"="wakeonlan 00:1D:60:3D:78:75"
+alias "gvim"="$HOME/bin/transparent_gvim"
 
 export PATH="./bin:$HOME/bin:$PATH"
 
