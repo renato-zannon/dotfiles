@@ -1,9 +1,12 @@
 URxvt.title: Terminal
 URxvt.depth: 32
 URxvt.background: rgba:0000/0000/0000/dddd
+
 URxvt.scrollBar: off
-URxvt.font: xft:DejaVu Sans Mono:pixelsize=10:antialias=true:hinting=true
-URxvt.boldFont: xft:DejaVu Sans Mono:bold:pixelsize=10:antialias=true:hinting=true
+URxvt.jumpScroll: false
+
+URxvt.font:     xft:DejaVu Sans Mono:size=8:antialias=true:autohint=true:
+URxvt.boldFont: xft:DejaVu Sans Mono:bold:size=8:antialias=true:autohint=true:
 URxvt*foreground: grey75
 
 URxvt*color0:  #2e2e34343636
