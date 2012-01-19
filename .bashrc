@@ -95,8 +95,7 @@ set -o vi
 # Nifty alias :)
 alias "desktop_on"="wakeonlan 00:1D:60:3D:78:75"
 
-# Path do bundler's binstubs
-export PATH="./bin:$PATH"
+export PATH="./bin:$HOME/bin:$PATH"
 
 # Just to be explicit =)
 export EDITOR="vim"
