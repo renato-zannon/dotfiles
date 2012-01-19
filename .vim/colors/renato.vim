@@ -12,7 +12,7 @@ hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
 highlight Pmenu                     guibg=#0d0d0d
-highlight Normal                    guifg=#E6E1DC guibg=#111111
+highlight Normal                    guifg=#E6E1DC guibg=#000000
 highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15
 highlight CursorLine                guibg=#0d0d0d ctermbg=232 cterm=NONE
 highlight CursorColumn              guibg=#0d0d0d ctermbg=232 cterm=NONE

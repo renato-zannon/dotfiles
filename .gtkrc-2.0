@@ -15,11 +15,11 @@ class "GtkTextView" binding "gtk-vi-text-entry"
 style "no-resize-handle"
 {
     GtkWindow::resize-grip-height = 0
-    GtkWindow::resize-grip-width = 0
+    GtkWindow::resize-grip-width  = 0
 }
 class "GtkWidget" style "no-resize-handle"
 
 style "vimfix" {
-  bg[NORMAL] = "#111111"
+  bg[NORMAL] = "#000000"
 }
 widget "vim-main-window.*GtkForm" style "vimfix"

@@ -29,10 +29,10 @@ main = xmonad $ gnomeConfig {
     `additionalKeysP` [
        ("M-p",  spawn "synapse"),
        ("M-b",  sendMessage ToggleStruts),
-       ("M-v",  raiseMaybe (spawn "gvim --servername GVIM") (className =? "Gvim")),
-       ("M-t",  runOrRaise "urxvt"                          (title     =? "Terminal")),
-       ("M-e",  runOrRaise "thunderbird"                    (title     =? "Thunderbird")),
-       ("M-i",  runOrRaiseNext "x-www-browser"              (className =? "X-www-browser")),
+       ("M-v",  runOrRaise "transparent_gvim"       (className =? "Gvim")),
+       ("M-t",  runOrRaise "urxvt"                  (title     =? "Terminal")),
+       ("M-e",  runOrRaise "thunderbird"            (title     =? "Thunderbird")),
+       ("M-i",  runOrRaiseNext "x-www-browser"      (className =? "X-www-browser")),
        ("M-g",  raise (title =? "Guard")),
        ("M-<Left>",  sendMessage $ Toggle REFLECTX)
      ]
