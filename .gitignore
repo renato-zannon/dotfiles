@@ -3,4 +3,5 @@
 !.gitignore
 !.vim/
 !.*rc
+!.xmonad
 .dmrc
