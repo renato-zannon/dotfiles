@@ -15,7 +15,9 @@ myManageHook = composeAll [
     isFullscreen --> doFullFloat
     ]
 
-startup = spawn "xcompmgr"
+startup = do
+    spawn "unity-2d-panel"
+    spawn "xcompmgr"
 
 myLayoutHook = avoidStruts $ mkToggle (single REFLECTX) $ smartBorders $ layoutHook gnomeConfig
 
