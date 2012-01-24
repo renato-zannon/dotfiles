@@ -1,5 +1,5 @@
 #!/bin/sh
 
-gvim --servername GVIM 2>/dev/null
+gvim "$@" 2>/dev/null
 sleep 0.3 # Sleep to give gvim's window time to pop up
-transset-df --name GVIM 0.85 1>/dev/null
+transset-df -a 0.87 1>/dev/null
