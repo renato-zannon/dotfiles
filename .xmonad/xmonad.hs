@@ -9,15 +9,13 @@ import XMonad.Layout.MultiToggle
 import XMonad.Hooks.ManageDocks
 
 myManageHook = composeAll [
-    appName   =? "Synapse"           --> doIgnore,
+    appName   =? "Synapse"           --> doFloat,
     className =? "Unity-2d-panel"    --> doIgnore,
     className =? "Unity-2d-launcher" --> doFloat,
     isFullscreen --> doFullFloat
     ]
 
-startup = do
-    spawn "unity-2d-panel"
-    spawn "xcompmgr"
+startup = spawn "sh ~/.xinitrc"
 
 myLayoutHook = avoidStruts $ mkToggle (single REFLECTX) $ smartBorders $ layoutHook gnomeConfig
 
