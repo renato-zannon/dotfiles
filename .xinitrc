@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-xcompmgr -n &
-nautilus -n &
+xbindkeys & disown
+xcompmgr -n & disown
