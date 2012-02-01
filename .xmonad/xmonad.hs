@@ -35,7 +35,7 @@ main = xmonad $ gnomeConfig {
        ("M-v",  runOrRaise "bin/transparent_gvim"       (className =? "Gvim")),
        ("M-t",  runOrRaise "urxvt"                      (title     =? "Terminal")),
        ("M-e",  runOrRaise "thunderbird"                (title     =? "Thunderbird")),
-       ("M-i",  runOrRaiseNext "x-www-browser"          (className =? "X-www-browser")),
+       ("M-i",  runOrRaiseNext "google-chrome"          (className =? "google-chrome")),
        ("M-g",  raise (title =? "Guard")),
        ("M-<Left>",  sendMessage $ Toggle REFLECTX)
      ]
