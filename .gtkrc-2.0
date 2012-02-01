@@ -1,3 +1,5 @@
+include "/usr/share/themes/Ambiance/gtk-2.0/gtkrc"
+
 # Vi-like bindings everywhere! Yay!
 
 binding "gtk-vi-text-entry" {
