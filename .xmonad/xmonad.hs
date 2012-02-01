@@ -11,6 +11,7 @@ import XMonad.Hooks.ManageDocks
 myManageHook = composeAll [
     appName   =? "Synapse"           --> doFloat,
     className =? "Unity-2d-panel"    --> doIgnore,
+    className =? "wicd-client.py"    --> doFloat,
     className =? "Unity-2d-launcher" --> doFloat,
     isFullscreen --> doFullFloat
     ]
