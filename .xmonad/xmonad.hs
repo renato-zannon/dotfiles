@@ -1,5 +1,5 @@
 import XMonad
-import XMonad.Config.Gnome
+import XMonad.Config.Desktop
 import XMonad.Util.EZConfig
 import XMonad.Layout.NoBorders
 import XMonad.Actions.WindowGo
@@ -9,19 +9,19 @@ import XMonad.Layout.MultiToggle
 import XMonad.Hooks.ManageDocks
 
 myManageHook = composeAll [
-    appName   =? "Synapse"           --> doFloat,
-    className =? "Unity-2d-panel"    --> doIgnore,
-    className =? "wicd-client.py"    --> doFloat,
-    className =? "Unity-2d-launcher" --> doFloat,
+    appName   =? "Synapse"        --> doFloat,
+    className =? "Unity-2d-panel" --> doIgnore,
+    className =? "lxpanel"        --> doIgnore,
+    className =? "wicd-client.py" --> doFloat,
     isFullscreen --> doFullFloat
     ]
 
 startup = spawn "sh ~/.xinitrc"
 
-myLayoutHook = avoidStruts $ mkToggle (single REFLECTX) $ smartBorders $ layoutHook gnomeConfig
+myLayoutHook = avoidStruts $ mkToggle (single REFLECTX) $ smartBorders $ layoutHook desktopConfig
 
-main = xmonad $ gnomeConfig {
-	manageHook  = manageDocks <+> myManageHook <+> manageHook gnomeConfig,
+main = xmonad $ desktopConfig {
+	manageHook  = manageDocks <+> myManageHook <+> manageHook desktopConfig,
 	borderWidth = 1,
 	focusedBorderColor = "#00a6c5",
 	focusFollowsMouse  = False,
