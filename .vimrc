@@ -40,6 +40,16 @@ set shiftwidth=2
 let mapleader=","
 nnoremap K kJ
 
+" The 'jk' experiment
+"====================
+inoremap <ESC> <NOP>
+inoremap     <NOP>
+inoremap jk    <ESC>
+
+vnoremap <esc> <NOP>
+vnoremap     <NOP>
+vnoremap <C-c> <ESC>
+
 " Command-line abbreviations
 " ==========================
 cnoreabbrev sel '<,'>

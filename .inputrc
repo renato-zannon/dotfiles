@@ -1,8 +1,13 @@
 set editing-mode vi
-set keymap vi
 set completion-ignore-case on
 set show-all-if-ambiguous on
 set visible-stats on
 
-"k":history-search-backward
-"j":history-search-forward
+$if mode=vi
+  set keymap vi-command
+  "k":history-search-backward
+  "j":history-search-forward
+
+  set keymap vi-insert
+  "jk":vi-movement-mode
+$endif
