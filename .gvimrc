@@ -1,3 +1,3 @@
-:set guifont=Deja\ Vu\ Sans\ Mono\ 9
+:set guifont=Inconsolata\ 10
 :set guioptions=acp
 :set numberwidth=1

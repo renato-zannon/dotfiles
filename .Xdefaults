@@ -1,3 +1,10 @@
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 URxvt.title: Terminal
 URxvt.depth: 32
 URxvt.background: rgba:0000/0000/0000/dddd
@@ -7,8 +14,8 @@ URxvt.jumpScroll: false
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
 
-URxvt.font:     xft:DejaVu Sans Mono:size=8:antialias=true:autohint=true:
-URxvt.boldFont: xft:DejaVu Sans Mono:bold:size=8:antialias=true:autohint=true:
+URxvt.font:     xft:Inconsolata:size=10:hinting=false
+URxvt.boldFont: xft:Inconsolata:bold:size=10:hinting=false
 URxvt*foreground: grey75
 
 URxvt*color0:  #2e2e34343636
