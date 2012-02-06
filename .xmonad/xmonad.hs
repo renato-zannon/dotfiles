@@ -33,10 +33,10 @@ main = xmonad $ desktopConfig {
     `additionalKeysP` [
        ("M-p",  spawn "synapse"),
        ("M-b",  sendMessage ToggleStruts),
-       ("M-v",  runOrRaise "bin/transparent_gvim"       (className =? "Gvim")),
-       ("M-t",  runOrRaise "urxvt"                      (title     =? "Terminal")),
-       ("M-e",  runOrRaise "thunderbird"                (title     =? "Thunderbird")),
-       ("M-i",  runOrRaiseNext "google-chrome"          (className =? "google-chrome")),
-       ("M-g",  raise (title =? "Guard")),
+       ("M-v",  runOrRaise "bin/transparent_gvim"         (className =? "Gvim")),
+       ("M-t",  raiseMaybe (spawn "urxvt -name Terminal") (className =? "URxvt")),
+       ("M-e",  runOrRaise "thunderbird"                  (title     =? "Thunderbird")),
+       ("M-i",  runOrRaiseNext "google-chrome"            (appName   =? "google-chrome")),
+       ("M-g",  raise (className =? "Guard")),
        ("M-<Left>",  sendMessage $ Toggle REFLECTX)
      ]
