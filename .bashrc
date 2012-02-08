@@ -55,10 +55,7 @@ function title() {
   echo -en "\033]2;$@\007"
 }
 
-function lazy_ssh() {
-eval "alias \"$1\"=\"(ssh-add -l || ssh-add) 1>/dev/null; $1\""
-}
-lazy_ssh "ssh"
-lazy_ssh "scp"
-lazy_ssh "sshfs"
-lazy_ssh "git"
+alias "ssh"="lazy_ssh ssh"
+alias "scp"="lazy_ssh scp"
+alias "sshfs"="lazy_ssh sshfs"
+alias "git"="lazy_ssh git"

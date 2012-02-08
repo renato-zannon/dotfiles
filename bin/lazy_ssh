@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+command="$1"
+shift # Removes the command name from the parameter list
+
+ssh-add -l 2>&1 1>/dev/null
+if [ $? -ne 0 ]; then
+  ssh-add
+fi
+
+exec "$command" "$@"
