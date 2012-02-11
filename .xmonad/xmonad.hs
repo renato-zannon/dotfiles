@@ -7,6 +7,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.Reflect
 import XMonad.Layout.MultiToggle
 import XMonad.Hooks.ManageDocks
+import qualified XMonad.StackSet as W
 
 insistentQuery name = appName =? name <||> title =? name <||> className =? name
 
@@ -39,5 +40,6 @@ main = xmonad $ desktopConfig {
        ("M-t",  raiseMaybe (spawn "urxvt")          (insistentQuery "Terminal")),
        ("M-g",  raise                               (insistentQuery "Guard")),
        ("M-i",  runOrRaiseNext "google-chrome"      (insistentQuery "google-chrome")),
+       ("M-S-t", withFocused $ windows . W.sink),
        ("M-<Left>",  sendMessage $ Toggle REFLECTX)
      ]
