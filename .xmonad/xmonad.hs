@@ -16,6 +16,7 @@ myManageHook = composeAll [
     className =? "Unity-2d-panel" --> doIgnore,
     className =? "lxpanel"        --> doIgnore,
     className =? "wicd-client.py" --> doFloat,
+    insistentQuery "xfce4-notifyd"  --> doIgnore,
     isFullscreen --> doFullFloat
     ]
 
@@ -36,10 +37,10 @@ main = xmonad $ desktopConfig {
     `additionalKeysP` [
        ("M-p",  spawn "synapse"),
        ("M-b",  sendMessage ToggleStruts),
-       ("M-v",  runOrRaise "bin/transparent_gvim"   (className =? "Gvim")),
-       ("M-t",  raiseMaybe (spawn "urxvt")          (insistentQuery "Terminal")),
-       ("M-g",  raise                               (insistentQuery "Guard")),
-       ("M-i",  runOrRaiseNext "google-chrome"      (insistentQuery "google-chrome")),
+       ("M-v",  runOrRaise "bin/transparent_gvim"         (className =? "Gvim")),
+       ("M-t",  raiseMaybe (spawn "urxvt -name Terminal") (insistentQuery "Terminal")),
+       ("M-g",  raise                                     (insistentQuery "Guard")),
+       ("M-i",  runOrRaiseNext "google-chrome"            (insistentQuery "google-chrome")),
        ("M-S-t", withFocused $ windows . W.sink),
        ("M-<Left>",  sendMessage $ Toggle REFLECTX)
      ]

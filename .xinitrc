@@ -5,9 +5,9 @@ start_if_not_running() {
 
   if [ $? -ne 0 ]; then
     if [ -n "$2" ]; then
-      exec $2 &
+      eval $2 &
     else
-      exec $1 &
+      eval $1 &
     fi
   fi
 }
@@ -17,4 +17,4 @@ start_if_not_running "xbindkeys"
 start_if_not_running "mpd" "mpd && mpc stop"
 start_if_not_running "mpdscribble"
 
-start_if_not_running "xcompmgr"
+start_if_not_running "xcompmgr" "xcompmgr -n"
