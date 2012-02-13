@@ -8,6 +8,8 @@ import XMonad.Layout.Reflect
 import XMonad.Layout.MultiToggle
 import XMonad.Hooks.ManageDocks
 
+insistentQuery name = appName =? name <||> title =? name <||> className =? name
+
 myManageHook = composeAll [
     appName   =? "Synapse"        --> doFloat,
     className =? "Unity-2d-panel" --> doIgnore,
@@ -33,10 +35,9 @@ main = xmonad $ desktopConfig {
     `additionalKeysP` [
        ("M-p",  spawn "synapse"),
        ("M-b",  sendMessage ToggleStruts),
-       ("M-v",  runOrRaise "bin/transparent_gvim"         (className =? "Gvim")),
-       ("M-t",  raiseMaybe (spawn "urxvt -name Terminal") (className =? "URxvt")),
-       ("M-e",  runOrRaise "thunderbird"                  (title     =? "Thunderbird")),
-       ("M-i",  runOrRaiseNext "google-chrome"            (appName   =? "google-chrome")),
-       ("M-g",  raise (className =? "Guard")),
+       ("M-v",  runOrRaise "bin/transparent_gvim"   (className =? "Gvim")),
+       ("M-t",  raiseMaybe (spawn "urxvt")          (insistentQuery "Terminal")),
+       ("M-g",  raise                               (insistentQuery "Guard")),
+       ("M-i",  runOrRaiseNext "google-chrome"      (insistentQuery "google-chrome")),
        ("M-<Left>",  sendMessage $ Toggle REFLECTX)
      ]
