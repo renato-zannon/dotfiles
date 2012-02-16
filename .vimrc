@@ -67,8 +67,10 @@ nnoremap g$ :tablast<CR>
 
 noremap <BS> ^
 noremap ç g_
-
+noremap Y y$
 noremap ' `
+
+noremap <A-p> "*:put<CR>
 
 noremap <leader>a  :Tabularize /
 noremap <leader>as :<C-R><C-R>=<SID>PrintAlignCmd()<CR>
