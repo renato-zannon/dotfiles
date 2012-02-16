@@ -1,7 +1,8 @@
 # If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+[[ $- != *i* ]] && return
 
-[ -z "$TMUX" ] && tmux && exit
+# Always log on tmux
+[[ -z "$TMUX" ]] && tmux && exit
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -48,7 +49,6 @@ export PATH="./bin:$HOME/bin:$PATH"
 export EDITOR="vim"
 export VIMHOME="$HOME/.vim"
 export COLORTERM="urxvt"
-export TERM="xterm"
 
 shopt -s dirspell
 shopt -s globstar
