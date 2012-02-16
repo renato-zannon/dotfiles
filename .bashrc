@@ -46,6 +46,7 @@ export PATH="./bin:$HOME/bin:$PATH"
 
 # Just to be explicit =)
 export EDITOR="vim"
+export VIMHOME="$HOME/.vim"
 export COLORTERM="urxvt"
 export TERM="xterm"
 
