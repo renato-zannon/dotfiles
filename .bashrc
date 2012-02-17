@@ -1,9 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Always log on tmux
-[[ -z "$TMUX" ]] && tmux && exit
-
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
@@ -34,8 +31,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 eval $(keychain --eval -Q --quiet --noask id_rsa)
 
 # Sets the console to vi mode
@@ -62,3 +57,5 @@ alias "ssh"="lazy_ssh ssh"
 alias "scp"="lazy_ssh scp"
 alias "sshfs"="lazy_ssh sshfs"
 alias "git"="lazy_ssh git"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
