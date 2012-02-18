@@ -19,6 +19,14 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+if [ -f "/etc/dircolors" ] ; then
+  eval $(dircolors -b /etc/dircolors)
+
+  if [ -f "$HOME/.dircolors" ] ; then
+    eval $(dircolors -b $HOME/.dircolors)
+  fi
+fi
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
