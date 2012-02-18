@@ -14,9 +14,9 @@ URxvt.jumpScroll: false
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
 
-URxvt.font:     xft:Inconsolata:size=10:hinting=false
-URxvt.boldFont: xft:Inconsolata:bold:size=10:hinting=false
-URxvt.italicFont: xft:Inconsolata:size=10:hinting=false
+URxvt.font:     xft:Inconsolata:size=9:hinting=false
+URxvt.boldFont: xft:Inconsolata:bold:size=9:hinting=false
+URxvt.italicFont: xft:Inconsolata:size=9:hinting=false
 URxvt*foreground: grey75
 
 URxvt*colorIT: red
