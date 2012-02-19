@@ -7,7 +7,9 @@ Xft.rgba: rgb
 
 URxvt.title: Terminal
 URxvt.depth: 32
-URxvt.background: rgba:0000/0000/0000/dddd
+URxvt.background: rgb:0000/0000/0000
+URxvt.transparent: true
+URxvt.shading: 14
 
 URxvt.scrollBar: off
 URxvt.jumpScroll: false
