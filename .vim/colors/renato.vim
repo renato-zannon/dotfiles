@@ -11,12 +11,23 @@ hi link htmlTag                     xmlTag
 hi link htmlTagName                 xmlTagName
 hi link htmlEndTag                  xmlEndTag
 
+hi TabLine     gui=none guibg=#151515
+hi TabLineSel  gui=bold guibg=#252525
+hi TabLineFill gui=none guibg=#151515
+
+hi StatusLine 	    guifg=#F8F8F8 guibg=#151515 gui=none
+hi StatusLine       ctermfg=255   ctermbg=234   cterm=none
+hi StatusLineNC     guifg=#888888 guibg=#151515 gui=none
+hi StatusLineNC     ctermfg=241   ctermbg=234   cterm=none
+hi VertSplit        guifg=#151515 guibg=#151515 gui=none
+hi VertSplit        ctermfg=233   ctermbg=234
+
 highlight Pmenu                     guibg=#0d0d0d
 highlight Normal                    guifg=#E6E1DC guibg=#000000
 highlight Cursor                    guifg=#000000 ctermfg=0 guibg=#FFFFFF ctermbg=15
-highlight CursorLine                guibg=#0d0d0d ctermbg=232 cterm=NONE
-highlight CursorColumn              guibg=#0d0d0d ctermbg=232 cterm=NONE
-highlight ColorColumn               guibg=#0d0d0d ctermbg=232 cterm=NONE
+highlight CursorLine                guibg=#070707 ctermbg=232 cterm=NONE
+highlight CursorColumn              guibg=#070707 ctermbg=232 cterm=NONE
+highlight ColorColumn               guibg=#070707 ctermbg=232 cterm=NONE
 highlight OverLength                guibg=#592929 ctermbg=red guifg=red ctermfg=white
 highlight Folded                    guifg=#6d9cbe guibg=Black
 
