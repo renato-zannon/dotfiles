@@ -31,14 +31,14 @@ main = xmonad $ desktopConfig {
 	focusFollowsMouse  = False,
 	layoutHook  = myLayoutHook,
 	startupHook  = startup,
-	terminal    = "urxvt",
+	terminal    = "bin/urxvt",
 	modMask     = mod4Mask
     }
     `additionalKeysP` [
        ("M-p",  spawn "synapse"),
        ("M-b",  sendMessage ToggleStruts),
        ("M-v",  runOrRaise "bin/transparent_gvim"         (className =? "Gvim")),
-       ("M-t",  raiseMaybe (spawn "urxvt -name Terminal") (insistentQuery "Terminal")),
+       ("M-t",  raiseMaybe (spawn "bin/urxvt -name Terminal") (insistentQuery "Terminal")),
        ("M-g",  raise                                     (insistentQuery "Guard")),
        ("M-i",  runOrRaiseNext "google-chrome"            (insistentQuery "google-chrome")),
        ("M-S-t", withFocused $ windows . W.sink),
