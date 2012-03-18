@@ -81,3 +81,6 @@
 [submodule ".vim/bundle/vim-rdoc"]
 	path = .vim/bundle/vim-rdoc
 	url = https://github.com/vim-scripts/RDoc.git
+[submodule ".vim/bundle/JavaScript-Indent"]
+	path = .vim/bundle/JavaScript-Indent
+	url = https://github.com/vim-scripts/JavaScript-Indent.git
