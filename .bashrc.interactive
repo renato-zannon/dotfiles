@@ -1,11 +1,7 @@
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
+# History settings
+
 HISTCONTROL=ignoredups:ignorespace
-
-# append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=5000
 HISTFILESIZE=10000
 
@@ -13,28 +9,10 @@ HISTFILESIZE=10000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-if [ -f "/etc/dircolors" ] ; then
-  eval $(dircolors -b /etc/dircolors)
-
-  if [ -f "$HOME/.dircolors" ] ; then
-    eval $(dircolors -b $HOME/.dircolors)
-  fi
-fi
-
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
 
 eval $(keychain --eval -Q --quiet --noask id_rsa)
 
@@ -52,11 +30,12 @@ shopt -s dirspell
 shopt -s globstar
 bind Space:magic-space
 
-function title() {
-  echo -en "\033]2;$@\007"
-}
-
 alias "ssh"="lazy_ssh ssh"
 alias "scp"="lazy_ssh scp"
 alias "sshfs"="lazy_ssh sshfs"
 alias "git"="lazy_ssh git"
+
+# A "fortune" phrase, except when opening a tmux pane
+if [ -z "${TMUX}" ]; then
+  fortune
+fi
