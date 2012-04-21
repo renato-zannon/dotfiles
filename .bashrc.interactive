@@ -1,9 +1,9 @@
 # History settings
 
-HISTCONTROL=ignoredups:ignorespace
+HISTCONTROL=ignorespace
 shopt -s histappend
-HISTSIZE=5000
-HISTFILESIZE=10000
+HISTSIZE=10000
+HISTFILESIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
