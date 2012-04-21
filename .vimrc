@@ -154,6 +154,9 @@ augroup haskell
   autocmd FileType haskell set sw=4 nosmartindent
 augroup END
 
+augroup javascript
+  autocmd FileType javascript set sw=2 et ts=2
+augroup END
 augroup vim
   autocmd FileType vim set tw=100
 augroup END"}}}

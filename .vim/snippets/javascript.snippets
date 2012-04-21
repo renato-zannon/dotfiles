@@ -83,3 +83,11 @@ snippet mem
 	},
 snippet jq
 	$("${1}")${2}
+snippet jqp
+	;(function($){
+		${1}
+	})(jQuery);
+snippet jqr
+	$(function() {
+		${1}
+	});
