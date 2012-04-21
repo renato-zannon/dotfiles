@@ -51,6 +51,8 @@ highlight Type                      guifg=#DA4939 ctermfg=167 gui=NONE cterm=NON
 highlight Visual                    guibg=#5A647E ctermbg=60
 highlight NonText                   guifg=#C0C0FF
 
+highlight CursorLineNr              guifg=#C0C0FF guibg=NONE  ctermfg=159 gui=NONE
+
 highlight DiffAdd                   guifg=#E6E1DC ctermfg=7 guibg=#519F50 ctermbg=71
 highlight DiffDelete                guifg=#E6E1DC ctermfg=7 guibg=#660000 ctermbg=52
 highlight Special                   guifg=#DA4939 ctermfg=167
