@@ -1,6 +1,8 @@
 ; vim: et ts=4 sw=4
 [core]
     editor = vim
+[push]
+    default = upstream
 [user]
     email = renato.riccieri@gmail.com
     name = Renato Riccieri
