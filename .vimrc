@@ -169,13 +169,6 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:snippets_dir="~/.vim/snippets"
 " }}}
 
-" Easytags {{{
-set tags=tmp/tags
-let g:easytags_dynamic_files = 1
-let g:easytags_suppress_ctags_warning = 1
-let g:easytags_auto_highlight = 0
-" }}}
-
 " Eclim {{{
 let g:EclimDisabled=1 " disabled by default
 
