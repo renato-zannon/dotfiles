@@ -7,6 +7,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.Reflect
 import XMonad.Layout.MultiToggle
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops 
 import qualified XMonad.StackSet as W
 
 insistentQuery name = appName =? name <||> title =? name <||> className =? name
@@ -29,6 +30,7 @@ main = xmonad $ desktopConfig {
 	borderWidth = 1,
 	focusedBorderColor = "#00a6c5",
 	focusFollowsMouse  = False,
+	handleEventHook = fullscreenEventHook, -- Fixes fullscreen for google chrome
 	layoutHook  = myLayoutHook,
 	startupHook  = startup,
 	terminal    = "bin/urxvt",
